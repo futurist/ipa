@@ -1,0 +1,321 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="English, IPA, pronunciation, phonetics, ESL, EFL, TEFL, teacher, teach English, jobs, accent, English accent, accent reduction">
+<title>Type IPA phonetic symbols - online keyboard</title>
+<link rel="stylesheet" href="typeit2.css" title="TypeIt style" type="text/css">
+<script type="text/javascript" src="typeit2.js"></script>
+<script type="text/javascript">
+var editorPage = true;
+var editorID = "ipa";
+var appSupportsEditor = true;
+var ctrlOverride = true;
+var prefCookiesPostfix = "ipa";
+preventStickyFormatting = true;
+defaultAutoPretty = false;
+defaultFontSize = 18;
+highlightFrequentButtons = false;
+
+		chars['ae ipa'] = { lower: '\u00E6' };
+		chars['father'] = { lower: '\u0251' };
+		chars['cut'] = { lower: '\u028C' };
+		chars['schwa'] = { lower: '\u0259' };
+        chars['schwa superscript'] = { lower: '\u1D4A' };
+		chars['bird'] = { lower: '\u025C' };
+		chars['r-colored schwa'] = { lower: '\u025A' };
+		chars['r-colored bird'] = { lower: '\u025D' };
+		chars['bed'] = { lower: '\u025B' };
+		chars['hit'] = { lower: '\u026A' };
+        chars['schwi'] = { lower: '\u026A\u0308', combChars: 1 };
+		chars['cot'] = { lower: '\u0252' };
+		chars['caught'] = { lower: '\u0254' };
+		chars['put'] = { lower: '\u028A' };
+        chars['schwu'] = { lower: '\u028A\u0308', combChars: 1 };
+		chars['dark l'] = { lower: '\u026B' };
+		chars['ng'] = { lower: '\u014B' };
+		chars['superscript r'] = { lower: '\u02B3' };
+		chars['alveolar approximant'] = { lower: '\u0279' };
+		chars['alveolar tap'] = { lower: '\u027E' };
+		chars['sh'] = { lower: '\u0283' };
+		chars['th'] = { lower: '\u03B8' };
+        chars['flap t'] = { lower: 't\u032C', displayOnWin: 't\u2009\u032C', combChars: 1 };
+		chars['th-voiced'] = { lower: '\u00F0' };
+		chars['zh'] = { lower: '\u0292' };
+        chars['glottal stop'] = { lower: '\u0294' };
+		chars['primary stress'] = { lower: '\u02C8' };
+		chars['secondary stress'] = { lower: '\u02CC' };
+		chars['length mark'] = { lower: '\u02D0', exclude: [ { name: 'Explorer', versions: [ 5, 6 ] } ] };
+        chars['becomes'] = { lower: '\u2192' };
+        chars['major group'] = { lower: '\u2016', exclude: [ { name: 'Explorer', versions: [ 5, 6 ] } ]  };        
+        
+        chars['syllabic'] = { lower: '\u0329', combChars: 1, displayOnWin: '&nbsp;\u0329' };
+        chars['nasalized'] = { lower: '\u0303', combChars: 1 };
+        
+        chars['apostrophe'] = { lower: '\u2019' };
+        chars['straight apostrophe'] = { lower: '\'' };
+        chars['high inverted quote'] = { lower: '\u201C' };
+        chars['high quote'] = { lower: '\u201D' };
+        chars['straight quote'] = { lower: '"' };
+		chars['dash'] = { lower: '-' };
+		chars['endash'] = { lower: '\u2013' };
+		chars['emdash'] = { lower: '\u2014' };
+
+		keys['Ctrl+A'] = [ chars['ae ipa'], chars['father'], chars['cut'] ];
+		keys['Ctrl+E'] = [ chars['schwa'], chars['schwa superscript'], chars['r-colored schwa'] ];
+        keys['Ctrl+Shift+E'] = [ chars['schwa superscript'] ];
+        keys['Ctrl+3'] = [ chars['bird'], chars['bed'], chars['r-colored bird'] ];
+		keys['Ctrl+I'] = [ chars['hit'], chars['schwi'] ];
+		keys['Ctrl+O'] = [ chars['caught'], chars['cot'] ];
+		keys['Ctrl+U'] = [ chars['put'], chars['schwu'] ];
+        keys['Ctrl+V'] = [ chars['cut'] ];
+		keys['Ctrl+L'] = [ chars['dark l'] ];
+		keys['Ctrl+N'] = [ chars['ng'] ];
+		keys['Ctrl+R'] = [ chars['superscript r'], chars['alveolar approximant'], chars['alveolar tap'] ];
+        keys['Ctrl+Shift+R'] = [ chars['superscript r'] ];
+		keys['Ctrl+S'] = [ chars['sh'] ];
+		keys['Ctrl+T'] = [ chars['th'], chars['flap t'] ];
+		keys['Ctrl+D'] = [ chars['th-voiced'] ];
+		keys['Ctrl+Z'] = [ chars['zh'] ];
+        keys['Ctrl+2'] = [ chars['glottal stop'] ];
+        
+        keys['Ctrl+Right'] = keys['Ctrl+Shift+Right'] = [ chars['becomes'] ];
+        keys['Ctrl+Q'] = keys['Ctrl+/?'] = [ chars['major group'] ];
+        keys['Ctrl+Shift+S'] = [ chars['nasalized'] ];
+        keys['Ctrl+Shift+I'] = [ chars['syllabic'] ];
+        
+        keys['Ctrl+,<'] = [ chars['primary stress'], chars['secondary stress'] ];
+        keys['Ctrl+.>'] = [ chars['length mark'] ];
+        keys['Ctrl+;:'] = keys['Ctrl+Shift+;:'] = [ chars['length mark'] ];
+        keys['Ctrl+\'"'] = [ chars['apostrophe'], chars['primary stress'] ];
+        keys['Ctrl+Shift+\'"'] = [ chars['high inverted quote'], chars['high quote'] ];
+        keys['Ctrl+Alt+-_'] = [ chars['endash'], chars['emdash'] ];
+        
+        keys['Ctrl+1'] = [ chars['primary stress'], chars['secondary stress'] ];
+        keys['Ctrl+4'] = [ chars['apostrophe'], chars['primary stress'] ];
+        keys['Ctrl+5'] = [ chars['high inverted quote'], chars['high quote'] ];
+        keys['Ctrl+6'] = [ chars['endash'], chars['emdash'] ];
+        keys['Ctrl+7'] = [ chars['th'], chars['flap t'] ];
+        keys['Ctrl+8'] = [ chars['ng'] ];
+        keys['Ctrl+0'] = [ chars['caught'], chars['cot'] ];
+		keys['\''] = [ chars['apostrophe'], chars['straight apostrophe'] ];
+		keys['"'] = [ chars['high inverted quote'], chars['high quote'], chars['straight quote'] ];
+		keys['-'] = [ chars['dash'], chars['endash'], chars['emdash'] ];        
+	</script>
+<style type="text/css">
+
+        #typeit_buttons.compact div.buttons { margin-bottom: 3px; }
+        #typeit_buttons.compact button { width: 23px; height: 26px; font-size: 17px; line-height: 26px; } /* 16px - problems with flap t */
+        #typeit_buttons.compact span.keyblock.extra button { width: 22px; }
+        #typeit_buttons.compact span.keyblock button:hover { background-color: #fafafa }
+        #typeit_buttons.compact span.keyblock.extra button:hover { background-color: #f3f3f3 }
+        #typeit_buttons.compact span.keyblock.narrow button { width: 20px }
+        #typeit_buttons.compact span.keyblock { padding-left: 3px; padding-right: 3px; margin-right: 3px; }
+        #typeit_buttons.compact span.keyblock label { display: none }
+        #typeit_buttons.compact span.keyblock.taller button { height: 32px; padding-bottom: 1px; font-size: 18px; }
+        #typeit_buttons.compact span.keyblock.combining button { width: 17px; color: rgb(30,30,30);
+            font-family: "Gentium Plus", "Doulos SIL", "Charis SIL", "Segoe UI", "DejaVu Sans", "Lucida Sans Unicode", "Lucida Grande", "Arial Unicode MS", sans-serif;
+        }
+    
+</style><!--[if lt IE 8]>
+<style type="text/css">
+#typeit_toolbar button sup { line-height: 1.6em; vertical-align: 25%; }
+#typeit_prefbar { margin-top: 6px }
+body { min-width: 1000px }
+div#ad-container { margin-left: 0px; }
+</style>
+<![endif]-->
+</head>
+
+<body class="editor">
+
+<div id="top-panel">&nbsp;</div>
+
+<div id=maintext>
+
+<table id=layout>
+<tr>
+<td id=left>
+</td>
+
+<td id=middle>
+
+
+<h1>Type IPA phonetic symbols <span class=sub>for English</span></h1>
+
+
+<form name=typeit id=typeit>
+<table id="typeit_toolbar" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2">
+
+<div id="typeit_editbuttons">
+<button id=bold title="boldface current selection (press Ctrl+B after selecting some text)" type="button" onClick="command('Bold');" style="font-weight: bold">B</button><button id=italic title="italicize current selection (press Ctrl+I after selecting some text)" type="button" onClick="command('Italic');"><i>I</i></button><button id=under title="underline current selection (press Ctrl+U after selecting some text)" type="button" onClick="command('Underline');"><span style="text-decoration: underline">U</span></button><button id=superscript title="superscript current selection (press Ctrl+&uarr; after selecting some text)" type="button" onClick="command('Superscript');"><sup>S</sup></button><button id=subscript title="subscript current selection (press Ctrl+&darr; after selecting some text)" type="button" onClick="command('Subscript');"><sub>S</sub></button><button id=deformat title="remove formatting from current selection (press Ctrl+Space after selecting some text)" type="button" onClick="command('RemoveFormat');">R</button>
+&nbsp;
+<button id=copyall title="copy the contents of the box so you can paste it somewhere else" type="button" style="width: auto" onClick="command('SelectAll'); command('Copy');">Copy all</button><button id=selectall title="select the contents of the box so you can copy &amp; paste it somewhere else" type="button" style="width: auto" onClick="command('SelectAll');">Select all</button>
+&nbsp;
+<button id=undo title="undo last operation" type="button" style="width: auto" onClick="command('Undo');">Undo</button><button id=redo title="redo last undone operation" type="button" style="width: auto" onClick="command('Redo');">Redo</button>
+&nbsp;
+<button id=clear title="remove all text" type="button" style="width: auto" onClick="command('ClearAll');">Clear all</button>
+</div>
+
+</td>
+</tr><tr>
+<td>
+
+
+<div id="typeit_buttons" class="compact">
+<div class=buttons>
+<span class=keyblock><button name="superscript r" type="button" title="Ctrl+R"></button><button name="alveolar approximant" type="button" title="Ctrl+RR"></button><button name="alveolar tap" type="button" title="Ctrl+RRR"></button></span><span class=keyblock><button name="sh" type="button" title="Ctrl+S"></button></span><span class=keyblock><button name="th" type="button" title="Ctrl+T or Ctrl+7"></button><button name="flap t" type="button" title="Ctrl+TT / Ctrl+77"></button></span><span class=keyblock><button name="put" type="button" title="Ctrl+U"></button><button name="schwu" type="button" title="Ctrl+UU"></button></span><span class=keyblock><button name="cut" type="button" title="Ctrl+V"></button></span><span class=keyblock><button name="zh" type="button" title="Ctrl+Z"></button></span><span class=keyblock><button name="glottal stop" type="button" title="glottal stop (Ctrl+2)"></button></span><span class="keyblock extra narrow"><button name="becomes" type="button" title="becomes (Ctrl+→)"></button><button name="major group" type="button" title="Ctrl+Q / Ctrl+/"></button><button name="nasalized" type="button" title="nasalized (Ctrl+Shift+S)" class="larger">&thinsp;&#x0303;</button><button name="syllabic" type="button" title="syllabic (Ctrl+Shift+I)"></button></span><span class="keyblock extra narrow"><button name="apostrophe" type="button" title="apostrophe (Ctrl+' / Ctrl+4)"></button><button name="high inverted quote" title="English-style opening quote (Ctrl+Shift+' / Ctrl+5)" type="button"></button><button name="high quote" title="English-style closing quote (hold Ctrl+Shift, press ' twice / Ctrl+55)" type="button"></button><button name="endash" title="Ctrl+Alt+- / Ctrl+6" type="button"></button><button name="emdash" title="Hold Ctrl+Alt, press - twice / Ctrl+66" type="button"></button></span>	
+</div>
+<div class=buttons>
+<span class="keyblock extra"><button name="primary stress" type="button" title="Ctrl+1 / Ctrl+, [comma] / Hold Ctrl, press ' twice"></button><button name="secondary stress" type="button" title="Ctrl+11 / Hold Ctrl, press , [comma] twice"></button></span><span class="keyblock extra"><button name="length mark" type="button" title="Ctrl+. [period] / Ctrl+;"></button></span><span class=keyblock><button name="ae ipa" type="button" title="Ctrl+A"></button><button name="father" type="button" title="Ctrl+AA"></button></span><span class=keyblock><button name="th-voiced" type="button" title="Ctrl+D"></button></span><span class=keyblock><button name="schwa" type="button" title="Ctrl+E"></button><button name="schwa superscript" type="button" title="Ctrl+EE / Ctrl+Shift+E" style="font-size: 16px"><sup>ə</sup></button><button name="r-colored schwa" type="button" title="Ctrl+EEE"></button></span><span class=keyblock><button name="bird" type="button" title="Ctrl+3"></button><button name="bed" type="button" title="Ctrl+33"></button><button name="r-colored bird" type="button" title="Ctrl+333"></button></span><span class=keyblock><button name="hit" type="button" title="Ctrl+I"></button><button name="schwi" type="button" title="Ctrl+II"></button></span><span class=keyblock><button name="dark l" type="button" title="Ctrl+L"></button></span><span class=keyblock><button name="ng" type="button" title="Ctrl+N or Ctrl+8"></button></span><span class=keyblock><button name="caught" type="button" title="Ctrl+O / Ctrl+0"></button><button name="cot" type="button" title="Ctrl+OO / Ctrl+00"></button></span>	
+</div>
+
+<script type="text/javascript">
+    charButtonsSection = document.getElementById("typeit_buttons");
+    setupShowMoreButtons();
+</script>
+</div>
+</td>
+<td id="tip"><div style="margin-bottom: 4px"><span class="popuphelp kbdhelp" title="click for help" data-popup_title="<p>Want to type faster? You can use keyboard shortcuts with the <kbd>Ctrl</kbd> key. For example, to type <span class=char>&#x0252;</span> or <span class=char>&#x0254;</span>, hold <kbd>Ctrl</kbd> and press <kbd>O</kbd> once or twice.</p>
+        <p>Point at a button to see its shortcut.</p>"><img src="http://static.typeit.org/kbd.png?68" alt=""><span class=link>keyboard shortcuts help</span></span></div><div><a href="http://ipa.typeit.org/full/" onclick="makeCrossDomainSave = true;" style="color: #444; background-color: #ffefec; line-height: 120%">keyboard with all IPA symbols</a></div></td></tr>
+</table>
+
+<iframe id="typeit_textbox_iframe" name="typeit_textbox_iframe" src="textbox.html?12" width="100%" height="380" frameborder="0" onload="textBoxHasLoaded = true;">
+</iframe>
+
+<script type="text/javascript">
+	textBoxIframe = document.getElementById("typeit_textbox_iframe");
+    setTextBoxHeight();
+</script>
+
+<div id="typeit_prefbar">
+	<input type="checkbox" id="typeit_autoprettyselector" title="Type curly quotes and long dashes when you repeatedly press ' &quot; or - on your keyboard.">
+	<label for="typeit_autoprettyselector" class="typeit_autoprettyselector">Use curly quotes and long dashes
+    <img class="popuphelp" src="http://static.typeit.org/qmark.png?68" alt="?" title="click for help" data-popup_title="<p>If this option is checked, you can type proper “curly” quotes by pressing the normal <kbd>&quot;</kbd> key on your keyboard.
+    Press <kbd>&quot;</kbd> again to type a closing quote.</p><p>Type a curly apostrophe by pressing the <kbd>'</kbd> key.
+    Type long “en” and “em” dashes by pressing the <kbd>-</kbd> key repeatedly.</p>"></label>
+    <span class=separator></span>
+	<label for="typeit_fontselector" class="typeit_fontselector">Font:</label>
+			<select id="typeit_fontselector">
+            <option value="(default)" data-typeit_stack="Charis SIL, Gentium Plus, Segoe UI, Doulos SIL, DejaVu Sans, Lucida Sans Unicode, Lucida Grande, Arial Unicode MS, sans-serif" data-typeit_default="true" data-typeit_lineheight="normal">(default)</option>
+			<option value="Arial" data-typeit_stack="Arial, Helvetica, sans-serif">Arial</option>
+			<option value="Calibri">Calibri</option>
+			<option value="Cambria">Cambria</option>
+            <option value="Charis SIL" data-typeit_lineheight="normal">Charis SIL</option>
+            <option value="DejaVu Sans">DejaVu Sans</option>
+            <option value="Doulos SIL" data-typeit_lineheight="normal">Doulos SIL</option>
+            <option value="Gentium" data-typeit_stack="Gentium Plus, serif" data-typeit_lineheight="normal">Gentium</option>
+            <option value="Linux Libertine">Linux Libertine</option>
+			<option value="Lucida" data-typeit_stack="Lucida Sans Unicode, Lucida Grande, sans-serif">Lucida</option>
+            <option value="Segoe UI" data-typeit_stack="Segoe UI, Frutiger, sans-serif">Segoe UI</option>
+            <option value="Tahoma">Tahoma</option>
+			<option value="Times" data-typeit_stack="Times New Roman, Times, serif">Times</option>
+			</select>
+        <img id="typeit_font_plus" src="http://static.typeit.org/button_plus.png?68" alt="+" title="increase text size">
+	<img id="typeit_font_minus" src="http://static.typeit.org/button_minus.png?68" alt="-" title="decrease text size"></div></form>
+
+<div id="typeit_browser_warning" style="display: none"></div>
+
+<script type="text/javascript">
+    setupBrowserWarning();
+</script>
+
+<div class=moreinf>
+		<div class=header>Learn more</div>
+	<p>
+	This IPA keyboard allows you to type pronunciations of English words as they
+	appear in English dictionaries.
+	</p>
+
+	<ul id="recommended-ipa-fonts">
+	<li>
+	After you copy text from the above box and paste it into your word processor or e-mail message,
+	make sure you <b>choose a Unicode font with IPA symbols in your word processor</b> or e-mail application.
+	Otherwise, phonetic symbols may not display correctly.</li>
+    <li>Recommended IPA fonts available on various platforms:
+    <ul>
+    <li><b>Windows XP</b>: <i>Lucida Sans Unicode</i> (incomplete) <!--(except for the “superscript <span class=char>ə</span>” symbol),--> or
+    <a href="http://www.typeit.org/help.htm#fonts">download a third-party IPA font</a></li>
+    <li><b>Windows Vista</b>: <i>Segoe UI</i>, <i>Arial</i>, <i>Times New Roman</i>, <i>Tahoma</i> or <i>Lucida Sans Unicode</i> (incomplete)</li> 
+    <li><b>Windows 7/8</b>: <i>Segoe UI</i>, <i>Cambria</i>, <i>Calibri</i>, <i>Arial</i>, <i>Times New Roman</i>, <i>Tahoma</i> or <i>Lucida Sans Unicode</i> (incomplete)</li>
+    <li><b>OS X (Snow Leopard and newer)</b>: <i>Lucida Grande</i>, <i>Arial</i>, <i>Times New Roman</i>, <i>Tahoma</i></li>
+    <li><b>Linux</b>: depends on the distro, but <i>Linux Libertine</i>, <i>Linux Biolinum</i> and <i>DejaVu Sans</i> are good bets.</li>
+    </ul>
+    </li><li>
+    If some of the symbols don’t display correctly, you’ll need to <a href="http://www.typeit.org/help.htm#fonts">download a third-party IPA font</a>.
+	</li><li>
+	The goal of the keyboard is to provide a way to enter IPA-based phonemic transcriptions, therefore 
+	some of the more arcane symbols used in &ldquo;narrow&rdquo; phonetic transcriptions (such as <span class=char>ɦ</span> or
+    <span class=char>ʍ</span>) are not included. If you need this level of detail, use the <a href="http://ipa.typeit.org/full/">full IPA keyboard</a>.
+	</li><li>
+	For help with transcribing, refer to Antimoon's
+	<a href="http://www.antimoon.com/how/pronunc-soundsipa.htm">chart with IPA phonetic symbols,
+	example words, and recordings</a> (make sure you read the footnotes).
+	</li><li>
+	Notes on specific symbols:
+
+	<ul>
+	<li>
+	<span class=char>ɪ̈</span> can be used to represent a &ldquo;weak <span class=char>&#618;</span>&rdquo; (as in <i>poss<u>i</u>ble</i>), which
+    usually sounds like something between <span class=char>&#618;</span> and <span class=char>&#601;</span>.
+	</li><li>
+	<span class=char>ʊ̈</span> can be used to represent a &ldquo;weak <span class=char>&#650;</span>&rdquo; (as in <i>ed<u>u</u>cation</i>), which
+    usually sounds like something between <span class=char>&#650;</span> and <span class=char>&#601;</span>.
+	</li><li>
+    <span class=char>t&#x032C;</span> can be used to indicate places where a &ldquo;flap t&rdquo; is normally pronounced in American English. For example,
+    <i>letter</i> can be transcribed <span class=char>/ˈlet̬əʳ/</span>. 
+    </li><li>
+    <span class=char><sup>&#x0259;</sup></span> can represent an optional <span class=char>&#x0259;</span> (schwa) before a syllabic consonant,
+    as in <i>butt<u>o</u>n</i>.
+    </li><li>
+    <span class=char>ɛ</span>, <span class=char>ɹ</span>, <span class=char>ɚ</span>, <span class=char>ɝ</span>, <span class=char>ɫ</span>
+    and <span class=char>ɾ</span> are not necessary in phonemic transcriptions, but are provided for those who might need them.
+    </li>
+	</ul>
+
+	</li>
+	</ul>
+
+	</div>
+	</div>
+</td>
+
+<td id=right>
+<div id=intro>
+This page allows you to easily type phonetic transcriptions of English words in the International Phonetic Alphabet (IPA). You can edit your text in the box and then copy it to your document, e-mail message, etc.</div>
+
+<div class="box" id="help">
+<label>Help</label>
+
+		<p>
+		Press <kbd>Ctrl</kbd> with the appropriate letter. For example,
+		to type <span class=char>&#x0252;</span> or <span class=char>&#x0254;</span>, hold <kbd>Ctrl</kbd> and press <kbd>O</kbd> once or twice.
+		</p><p>
+		Stop the mouse over each button to learn its keyboard shortcut.
+		</p><p>You can select text and press <kbd>Ctrl&#x200A;+&#x200A;C</kbd> to copy it to your docu&shy;ment. In your target document, press
+        <kbd>Ctrl&#x200A;+&#x200A;V</kbd>, or, if you want to paste the text without formatting, try <kbd>Ctrl&#x200A;+&#x200A;Shift&#x200A;+&#x200A;V</kbd>.</p>	
+		<p>
+		After pasting, you may need to choose an IPA-enabled font
+		(such as <i>Lucida</i> or <i>Arial</i>) in your target application to see all characters.
+		</p>
+		<!--
+<div style="text-align: right; font-size: 94%;"><a href="help.htm" style="color: #EF5733">more help...</a></div>
+-->
+</div>
+
+</td>
+
+</tr>
+</table>
+
+<hr class=footer>
+
+
+
+</div>
+</body>
+</html>

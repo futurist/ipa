@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=0.5">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>Document</title>
+<style type="text/css">
+*{
+	margin:0;
+	padding:0;
+}
+ul,li{ list-style: none; }
+
+body{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", "DejaVu Sans", "Arial Unicode MS", sans-serif;
+	font-size: 17px;
+}
+.wrap{
+	max-width:950px;
+	margin:auto;
+}
+
+#ipa li {
+	white-space: nowrap;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+#ipa li {
+	background-color: #e5e5e5;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 2px;
+}
+#ipa li:hover {
+	background-color: #efefef;	
+}
+
+button {
+	background-color: rgb(229,229,229);
+	border-style: none;
+	width: 32px;
+	height: 32px;
+	color: rgb(51,51,51);
+	line-height: 24px;
+	font-size: 17px;
+	margin: 2px;
+	padding: 2px;
+	outline:none;
+}
+button:hover {
+	background-color: #fafafa;
+}
+
+.selChar{
+	height: 26px;
+	margin: 10px 0;
+	font-size: 17px;
+	background-color: #ccc;
+}
+.hintText{
+	float:left;
+	margin-right:10px;
+}
+ul.hint li{
+	float:left;
+	margin: 0 10px;
+}
+.input{
+	max-width: 442px;
+	height: 50px;
+	font-size: 22px;
+}
+.selChar.hide{
+	background-color: #fff;
+}
+.selChar.hide .hintText{
+	display: none;
+}
+.resultTitle{
+	padding:10px;
+	background:#fff;
+	border-bottom:2px solid #eee;
+}
+.result{
+	margin-top:30px;
+}
+.result li {
+	margin:10px 0;
+	margin-top: 20px;
+}
+.result li p{
+	white-space: pre-wrap;
+}
+
+form{
+	
+}
+form .input, form span{
+	float:left;
+}
+.input0{
+	padding :0px;
+	padding-top :0px;
+	position: relative;
+}
+form .input1, form .input2 {
+	width: 100px;
+	height: 54px;
+	float: left;
+	border: 1px solid #999;
+	background: #eee;
+	margin-left:2px;
+}
+
+.right20{
+	right:20px;
+}
+#history{
+	position:absolute;
+	top: 200px;
+	border-left:12px solid #eee;
+	padding:10px;
+	padding-right:20px;
+	background:#fff;
+}
+#history .con{
+	overflow: hidden;
+}
+#history a{
+	font-size:14px;
+}
+#history li a{
+	font-size: 1.5em;
+	line-height: 1.5em;
+}
+#history ul{
+	margin-bottom: 10px;
+	max-height: 182px;
+	overflow: auto;
+	padding-right: 25px;
+}
+.clear{
+	font-size: 14px;
+	margin-bottom: 20px;
+}
+
+.hidden{
+	display:none;
+}
+
+.clickable,label { cursor: pointer; }
+.clickable:hover { background: #ccc; }
+
+
+
+
+
+/* ---- form beautify */
+
+input[type=radio] ~ label ,
+input[type=checkbox] ~ label {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	padding: 15px 0;
+	padding-left: 0px;
+	margin-right: 53px;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent; /* For some Androids */
+}
+input[type=radio],
+input[type=checkbox] {
+  -webkit-appearance: none;
+  width: 130px;
+  height: 48px;
+  position: absolute;
+  z-index: 999;
+  outline:none;
+  border:none;
+  background:rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent; /* For some Androids */
+}
+input[type=radio] ~ label:before ,
+input[type=checkbox] ~ label:before {
+	content: "";
+	display: inline-block;
+
+	width: 22px;
+	height: 22px;
+	margin:20px 5px;
+	position: absolute;
+	right:-35px;
+	bottom: -4px;
+	background-color: #C3C3C3;
+	box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+}
+
+input[type=radio] ~ label:before {
+	border-radius: 8px;
+}
+
+input[type=checkbox] ~ label:before {
+    border-radius: 3px;
+}
+
+input[type=radio]:checked ~ label:before {
+    content: "\2022";
+    color: #f3f3f3;
+    font-size: 30px;
+    text-align: center;
+    line-height: 18px;
+}
+
+input[type=checkbox]:checked ~ label:before {
+	content: "\2713";
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+	font-size: 22px;
+	color: #f3f3f3;
+	text-align: center;
+    line-height: 22px;
+    -webkit-transform: scale3d(1.1, 1.1, 1);
+}
+
+
+
+
+/* The Select CSS */
+select {
+    padding:3px;
+    margin: 0;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 2px 0 #ccc, 0 -1px #fff inset;
+    border:none;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+    height: 32px;
+	width: 90px;
+    font-size: 18px;
+    padding-left:5px;
+    color:#000;
+    background: #cecece;
+}
+
+/* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    select {padding-right:38px}
+}
+
+label.select {position:relative}
+label.select:after {
+    content:'<>';
+    font:16px/16px "Consolas", monospace;
+    color:#000;
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    transform:rotate(90deg);
+    right:8px; top:0px;
+    padding:0 0 2px;
+    border-bottom:1px solid #000;
+    position:absolute;
+    pointer-events:none;
+}
+/*label.select:before {
+    content:'';
+    right:6px; top:0px;
+    width:20px; height:20px;
+    background:#f8f8f8;
+    position:absolute;
+    pointer-events:none;
+    display:block;
+}*/
+/* form beautify ---- */
+
+
+.handler{
+	position: absolute;
+	top: 0;
+	left: -42px;
+	background: #eee;
+	color: #3F76DA;
+	width: 20px;
+	padding: 10px 10px;
+	cursor: pointer;
+	border:1px solid #eee;
+}
+
+@media only screen and (max-device-width : 768px){
+	.resultTitle{
+		line-height: 1.5;
+	}
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>根据音标查单词</h1>
+<div class="header">
+	<div id="ipa">
+	<ul></ul>
+	</div>
+
+	<div class="inputChar">
+		<div class="selChar hide"><span class="hintText">Press number: </span><ul class="hint"></ul></div>
+		<form action="javascript:;" onsubmit="getResult()">
+			<span class="input0"><input type="checkbox" id="match"> <label class="checkbox" for="match">精确匹配</label></span><input class="input inputText" contentEditable="true"/><input class="input input1" type="submit" value="提交" /><input class="input input2" type="reset" value="清除" />
+			<div style="clear:both"></div>
+		</form>
+	</div>
+</div>
+
+<div class="result">
+<h2 class="resultTitle"></h2>
+<ul></ul>
+</div>
+
+</div>
+
+<div id="history" class="right20 ">
+	<div class="con">
+		<ul></ul>
+		<p class="clear"><a href="javascript:clearHistory();">[CLEAR]</a></p>
+	</div>
+	<p><a href="#">[TOP]</a></p>
+	<div class="handler">&#x2725;历史记录</div>
+</div>
+
+<div class="soundPlayer" style="height:0; overflow:hidden;">
+<audio id="soundPlayer" src="" preload="false"></audio>
+</div>
+
+<script type="text/javascript" src="http://1111hui.com/js/jquery.js"></script>
+<script type="text/javascript" src="js/rangyinputs-jquery-src.js"></script>
+<script type="text/javascript" src="js/jquery-scrolltofixed-min.js"></script>
+<script type="text/javascript" src="js/jquery.scrollTo.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.ui.touch-punch.js"></script>
+<script type="text/javascript" src="js/audio.js"></script>
+
+<script type="text/javascript">
+
+/***
+symbol from 
+http://www.antimoon.com/how/pronunc-soundsipa.htm
+
+*********/
+
+var _to_ascii = { '188': '44', '109': '45', '190': '46', '191': '47', '192': '96', '220': '92', '222': '39', '221': '93', '219': '91', '173': '45', '187': '61', '186': '59', '189': '45' }
+var shiftUps = { "96": "~", "49": "!", "50": "@", "51": "#", "52": "$", "53": "%", "54": "^", "55": "&", "56": "*", "57": "(", "48": ")", "45": "_", "61": "+", "91": "{", "93": "}", "92": "|", "59": ":", "39": "\"", "44": "<", "46": ">", "47": "?" };
+
+var lang = 'uk';
+
+var ipa = [
+{word:'cup', sym_uk: "\u028C", key:"a", seckey0:"a", cmu:"AH",order:30},
+{word:'arm', sym_uk: "\u0251:", key:"a", seckey0:":", cmu:"AA R",order:100},
+{word:'cat', sym_uk: "\u00E6", key:"a", seckey0:"e", cmu:"AE",order:30},
+{word:'met', sym_uk: "e", cmu:"EH",order:30},
+{word:'away', sym_uk: "\u0259", key:"e", seckey0:"e", cmu:"AH",order:30},
+{word:'turn', sym_uk: "\u025C:", sym_us: "\u025D", key:"e", seckey0:":", cmu:"ER",order:100},
+{word:'hit', sym_uk: "\u026A", key:"i", seckey0:"i", cmu:"IH",order:30},
+{word:'see', sym_uk: "i:", key:"i", seckey0:":", cmu:"IY",order:100},
+{word:'hot', sym_uk: "\u0252", key:"o", seckey0:"o", cmu:"AA",order:30},
+{word:'call', sym_uk: "\u0254:", key:"o", seckey0:":", cmu:"AO",order:100},
+{word:'put', sym_uk: "\u028A", key:"u", seckey0:"u", cmu:"UH",order:30},
+{word:'blue', sym_uk: "u:", key:"u", seckey0:":", cmu:"UW",order:100},
+{word:'five', sym_uk: "a\u026A", key:"ai", seckey0:"i", seckey1:"a", cmu:"AY",order:100},
+{word:'now', sym_uk: "a\u028A", key:"au", seckey0:"u", seckey1:"a",  cmu:"AW",order:100},
+{word:'say', sym_uk: "e\u026A", key:"ei",seckey0:"i", seckey1:"e",  cmu:"EY",order:100},
+{word:'go', sym_uk: "o\u028A", key:"ou", seckey0:"u", seckey1:"o", cmu:"OW",order:100},
+{word:'boy', sym_uk: "\u0254\u026A", key:"oi", seckey0:"i", seckey1:"o", cmu:"OY",order:100},
+{word:'where', sym_uk: "e\u0259",sym_us: "e\u02B3", key:"er" ,seckey0:"r", seckey1:"e",  cmu:"EH R",order:100},
+{word:'near', sym_uk: "\u026A\u0259",sym_us: "\u026A\u02B3", key:"ir" ,seckey0:"r", seckey1:"i", cmu:"IH R",order:100},
+{word:'pure', sym_uk: "\u028A\u0259", sym_us: "\u028A\u02B3", key:"ur" , seckey0:"r", seckey1:"u", cmu:"UH R",order:100},
+
+{word:'bad', sym_uk: "b", cmu:"B",order:10},
+{word:'did', sym_uk: "d", cmu:"D",order:10},
+{word:'find', sym_uk: "f", cmu:"F",order:10},
+{word:'give', sym_uk: "g", cmu:"G",order:10},
+{word:'how', sym_uk: "h", cmu:"HH",order:10},
+{word:'yes', sym_uk: "j", cmu:"Y",order:10},
+{word:'kiss', sym_uk: "k", cmu:"K",order:10},
+{word:'leg', sym_uk: "l", cmu:"L",order:10},
+{word:'man', sym_uk: "m", cmu:"M",order:10},
+{word:'no', sym_uk: "n", cmu:"N",order:10},
+{word:'sing', sym_uk: "\u014B", key:"n",seckey0:"g", cmu:"NG",order:10},
+{word:'pet', sym_uk: "p", cmu:"P",order:10},
+{word:'red', sym_uk: "r", seckey0:"r", cmu:"R",order:10},
+{word:'sun', sym_uk: "s", cmu:"S",order:10},
+{word:'she', sym_uk: "\u0283", key:"s",seckey0:"h", cmu:"SH",order:10},
+{word:'tea', sym_uk: "t", cmu:"T",order:10},
+{word:'check', sym_uk: "t\u0283", key:"c",seckey0:"h", cmu:"CH",order:100},
+{word:'think', sym_uk: "\u03B8", key:"t",seckey0:"h", cmu:"TH",order:10},
+{word:'this', sym_uk: "ð", key:"t",seckey0:"d", cmu:"DH",order:10},
+{word:'voice', sym_uk: "v", cmu:"V",order:10},
+{word:'wet', sym_uk: "w", cmu:"W",order:10},
+{word:'zoo', sym_uk: "z", cmu:"Z",order:10},
+{word:'vision', sym_uk: "\u0292", key:"r", cmu:"ZH",order:10},
+{word:'large', sym_uk: "d\u0292", key:"dzr",seckey0:"g", cmu:"JH",order:100},
+{word:'stress', sym_uk: "\u02C8", cmu:"'",order:10},
+{word:'stress2', sym_uk: "\u02CC", key:"\"", cmu:"",order:10}
+];
+
+var ordIpa = $.extend([],ipa);
+ordIpa.sort(function(a,b){ return b.order-a.order });
+
+var isTouch = !!('ontouchstart' in window);
+var clickEvent = isTouch?'touchstart':'click';
+var prevPhon="";
+var prevChar="";
+
+$.each(ipa, function(i,v){
+	$('#ipa ul').append('<li><button name="'+ i +'" type="button" title="">'+ (v['sym_'+lang]||v['sym_uk']) +'</button></li>');
+});
+
+$('#ipa button').click(function(){
+	$(".inputText").replaceSelectedText( $(this).html() );
+});
+
+$(".inputText").on("keydown", function(e){
+	if( (e.keyCode==8||e.keyCode==27) && $("ul.hint li").size()>1 ){
+		$('.selChar').addClass("hide").find("ul").html("");
+		e.preventDefault();
+	}
+});
+
+$("body").on(clickEvent, "ul.hint li", function(e){
+	$(".inputText").replaceSelectedText( $(this).find('span').html() );
+});
+
+
+function getCharFromEvent(e){
+	var c = e.which;
+
+	//normalize keyCode 
+	if (_to_ascii.hasOwnProperty(c)) {
+		c = _to_ascii[c];
+	}
+
+	if (!e.shiftKey && (c >= 65 && c <= 90)) {
+		c = String.fromCharCode(c + 32);
+	} else if (e.shiftKey && shiftUps.hasOwnProperty(c)) {
+		//get shifted keyCode value
+		c = shiftUps[c];
+	} else {
+		c = String.fromCharCode(c);
+	}
+	return c;
+}
+
+$(".inputText").on("keypress", function(e){
+	var isSel = false;
+	var char = getCharFromEvent(e);
+	if(char>=1&&char<=$("ul.hint li").size() ){
+		$(".inputText").replaceSelectedText( $("ul.hint li span").eq(char-1).html() );
+		e.preventDefault();
+		isSel=true;
+	}
+	if( !isSel && prevChar && $("ul.hint li").size()>1 ){
+		var c = $("ul.hint li").map(function(i,e){
+			if( $(this).data("seckey")== char) return i;
+		}).toArray();
+
+		var ci = (c.length) ? c[0] : 0;
+		if(ci>-1) {
+			$(".inputText").replaceSelectedText( $("ul.hint li span").eq(ci).html() );
+		}
+		if(c.length || char==' ')
+			e.preventDefault();
+		isSel=true;
+	}
+
+	$('.selChar').addClass("hide").find("ul").html("");
+	prevChar="";
+	if( (c&&c.length) && isSel){
+		return;
+	}
+	var keys = $.map(ipa, function(v){ if( v.key && v.key.indexOf(char)>-1 || v.sym_uk==char )return v; });
+	
+	if(keys.length>1){
+		e.preventDefault();
+		$('.selChar').removeClass("hide");
+		//keys.unshift({ sym_uk:char });
+		$.each(keys,function(i,v) {
+			$("ul.hint").append("<li><sup>"+ (i+1) +"</sup><sub></sub>)<span>"+ (v['sym_'+lang]||v['sym_uk']) +"</span></li>");
+			var c=0;
+			if(v.sym_uk==char) c=0;
+			if(v.key) c=v.key.indexOf(char);
+			var seckey = v["seckey"+ c ];
+			if(seckey) {
+				$("ul.hint li").last().data("seckey", seckey);
+				$("ul.hint li sub").last().html(seckey);
+			}
+		});
+	} else if(keys.length==1) {
+		e.preventDefault();
+		var v=  keys[0];
+		$(".inputText").replaceSelectedText( (v['sym_'+lang]||v['sym_uk'])  );
+	}
+	prevChar=char;
+
+});
+
+$(".inputText").on("focus", function(e){
+	$('.selChar').addClass("hide").find("ul").html("");
+});
+
+$(".inputText").on("blur1", function(e){
+	getResult();
+});
+
+$('#history').removeClass('hidden');
+
+function getResult(){
+	var s = $('.inputText').val().toLowerCase();
+	s=$.trim(s);
+	$('.inputText').val(s);
+	var json =  {"phon" : s, "pro":(s), "match": $('#match').prop("checked")?1:0 };
+	if(prevPhon==JSON.stringify(json) ) return;
+	prevPhon= JSON.stringify(json) ;
+
+	$('.input1, .input2').prop('disabled',true);
+	$.each(ordIpa, function(i,v){
+		s = s.replace(new RegExp((v['sym_'+lang]||v['sym_uk']), "g"), v.cmu+' ');
+	});
+	s=s.replace(/\s+/g,' ');
+	s=s.replace(/^\s+|\s+$/g,'');
+	
+
+	if( $('#history ul a').map(function(i,e){ if( $(this).html()==json.phon && $(this).data('match')==json.match ) return this; }).size()==0 ){
+		
+		$('#history ul').append('<li><a href="javascript:;" data-match="'+ json.match +'">'+json.phon+'</a></li>');
+
+		var coki = $.cookie('wordHistory');
+		if(coki && coki[0]=='[' ) json = JSON.parse(coki).concat([json]);
+		else json = [(json)];
+
+		$.cookie('wordHistory', JSON.stringify(json) , { expires: 7, path: '/' });
+		
+	}
+	
+	$(".result h2").html("");
+	$(".result ul").html("");
+
+	posHistory();
+
+	$.getJSON("http://1111hui.com/cgi-bin/convert.py",{"pro":(s), "match": $('#match').prop("checked")?1:0 }, function(data){
+		$('.input1, .input2').prop('disabled',false);
+		$.each(data, function(i,v){
+			if(!v.word) return true;
+			$(".result>h2").append( "<span class=clickable>"+ v.word +"</span> " );
+			$(".result ul").append("<li><h2 title="+ v.word +"><span class=clickable>"+ v.word +"</span></h2><p>"+ v.pro +"\n"+ v.definition.replace(/\s*(\/.*\/)\n\s+/m, '\n$1\n') +"</p></li>");
+		});
+		if(!data.length){
+			$(".result>h2").html("Not Found");
+		}
+		posHistory();
+		var w=$("#history").width()+40;
+		//$(".result").css({marginRight: w });
+	});
+	
+}
+
+//paly sound of phon
+var playerA, sound;
+var soundPlaying = false;
+
+audiojs.events.ready(function() {
+		sound = audiojs.create( $('#soundPlayer').get(0) );
+});
+
+function playList(urlA){
+	if(!urlA || urlA.lenth<1)return;
+	if(typeof urlA=='string') urlA=[urlA];
+	var cur=0;
+	(sound.trackEnded=function(){
+		if(cur>=urlA.length) return;
+		sound.load( urlA[cur] );
+		sound.play();
+		cur++;
+	})();
+}
+
+function playSound(word){
+	//***** youdao sound
+	
+	playList([ 'http://dict.youdao.com/dictvoice?audio='+word,  'http://dict.youdao.com/dictvoice?audio='+word+'&type=2' ]);
+	return;
+
+	//***** merriam-webster sound
+	$.get('http://ipaserver.herokuapp.com/?word='+word, function(data){
+		var wav = $.map( data.match(/<wav>([^<]*)<\/wav>/g), function(v){ 
+			var w=($(v).text());
+			return   'http://media.merriam-webster.com/soundc11/'+ w[0] +'/'+w;   
+		});
+		if(wav.length) {
+			playList(wav);
+		}
+	})
+}
+
+
+function clearHistory(){
+	$.removeCookie('wordHistory',{path:'/'}); 
+	$('#history ul').html('');
+}
+
+
+var coki = $.cookie('wordHistory');
+var historyJSON= (coki && coki[0]=='[' ) ? JSON.parse(coki) : [];
+$.each(historyJSON, function(i,v){
+	$('#history ul').append('<li><a href="javascript:;" data-match="'+ v.match +'">'+v.phon+'</a></li>');
+});
+if(historyJSON.length) $('#history').removeClass('hidden');
+
+$("body").on(clickEvent,"#history li a", function(e){
+	$('.inputText').val( $(this).html() );
+	$('input#match').prop("checked", $(this).data("match") );
+	$("body").animate({ scrollTop: 0 }, 0 );
+});
+$(".result>h2").scrollToFixed({ } );
+$("body").on(clickEvent,".result h2 span", function(e){
+	var word = $(this).html();
+	playSound(word);
+});
+$("body").on(clickEvent,".result>h2 span", function(e){
+	var word = $(this).html();
+	$('h2[title="'+ word +'"]').each(function(){ 
+		$("body").animate({ scrollTop: $(this).offset().top - $(".result>h2").height()-30 }, 0 );
+	});
+});
+
+
+/**************
+
+SIMPLE DRAG WITH jquery
+
+*************/
+/*
+var dragging = undefined, prevX, prevY, prevPageX, prevPageY;
+
+$('.draggable').on('mousedown', function(e){
+	e.preventDefault();
+	e.stopPropagation();
+	dragging=$(this);
+    prevY=parseFloat(dragging.css("top"));
+    prevX=parseFloat(dragging.css("left"));
+    prevPageX = e.pageX;
+    prevPageY = e.pageY;
+
+});
+
+//$('body').bind('dragstart', function(event) { event.preventDefault(); });
+$('body').on('mousemove', function(e){
+    if(typeof dragging != "undefined" && (e.pageY - prevPageY!=0 || e.pageX - prevPageX!=0) ) {
+        dragging.css({
+             top : prevY+ (e.pageY - prevPageY),
+             left : prevX + (e.pageX - prevPageX)
+        });
+
+    	$("#history").addClass("dragging").data({left: prevX + (e.pageX - prevPageX) });
+    }
+
+    
+
+});
+
+$('body').on('mouseup', function(){
+    dragging = undefined;
+    setTimeout( function(){
+    	$("#history").removeClass("dragging");
+    },100);
+});
+
+*/
+
+
+var left= $(window).width()-$("#history").width()-60;
+$("#history").removeClass('right20').css({left:left });
+$("#history").data({left:left });
+
+$(".handler1").on("click",function(e){
+	if($("#history").hasClass("dragging") )
+		return;
+
+	$con = $("#history .con");
+	if($con.hasClass("hidden")){
+		$con.removeClass("hidden");
+		$(this).html("隐藏").css({background:'#eee'});
+		$("#history").css({borderLeft:'12px solid #eee'});
+	}else{
+		$con.addClass("hidden");
+		$(this).html("打开").css({background:'none'});
+		$("#history").css({border:'none'});
+	}
+	posHistory();
+})
+
+function posHistory(){
+	$("#history").scrollToFixed({ marginTop: 10, 
+			unfixed: function() {  var left=$("#history").data('left'); if(left) $("#history").css({left:left}) },
+			fixed: function() {  var left=$("#history").data('left'); if(left) $("#history").css({left:left}) }
+	 } );
+}
+posHistory();
+
+$("#history").draggable({
+	handle: ".handler",
+	start:function(e,ui){
+		  var css=$('#history').attr("style");
+		  $('#history').trigger('detach.ScrollToFixed');
+		  $('#history').attr("style", css);
+	}
+});
+
+
+  </script>
+ </body>
+</html>
