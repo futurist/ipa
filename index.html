@@ -342,7 +342,7 @@ label.select:after {
 <audio id="soundPlayer" src="" preload="false"></audio>
 </div>
 
-<script type="text/javascript" src="http://1111hui.com/js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/rangyinputs-jquery-src.js"></script>
 <script type="text/javascript" src="js/jquery-scrolltofixed-min.js"></script>
 <script type="text/javascript" src="js/jquery.scrollTo.min.js"></script>
@@ -557,7 +557,7 @@ function getResult(){
 
 	posHistory();
 
-	$.getJSON("http://1111hui.com/cgi-bin/convert.py",{"pro":(s), "match": $('#match').prop("checked")?1:0 }, function(data){
+	$.getJSON("http://localhost:8000",{"pro":(s), "match": $('#match').prop("checked")?1:0 }, function(data){
 		$('.input1, .input2').prop('disabled',false);
 		$.each(data, function(i,v){
 			if(!v.word) return true;

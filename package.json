@@ -1,0 +1,23 @@
+{
+  "name": "ipa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cgi.js",
+  "scripts": {
+    "start": "node cgi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/futurist/ipa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/futurist/ipa/issues"
+  },
+  "homepage": "https://github.com/futurist/ipa#readme",
+  "dependencies": {
+    "cgi": "^0.3.1"
+  }
+}
